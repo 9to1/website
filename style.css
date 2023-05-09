@@ -1,0 +1,267 @@
+/* CSS Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #00000;
+  background-color: #f7f7f7;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+  background-color: #fff;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+}
+
+header nav ul li {
+  margin-right: 20px;
+}
+
+header nav ul li:last-child {
+  margin-right: 0;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease-in-out;
+}
+
+header nav ul li a:hover {
+  color: #c2185b;
+}
+
+.toggle-nav {
+  display: none;
+  background-color: transparent;
+  border: none;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  header nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header nav ul {
+    margin-top: 20px;
+  }
+
+  header nav ul li {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  .toggle-nav {
+    display: block;
+    margin-top: 20px;
+  }
+
+  .nav-open {
+    height: auto;
+  }
+
+  .nav-open header nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-open header nav ul {
+    display: block;
+  }
+
+  .nav-open header nav ul li {
+    margin-bottom: 10px;
+  }
+}
+
+/* Hero Styles */
+.hero {
+  background-image: url('1.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px #000;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 20px;
+  color: #fff;
+  text-shadow: 2px 2px #000;
+}
+
+/* Services Styles */
+.services {
+  background-color: #fff;
+  padding: 80px 0;
+}
+
+.services .service {
+  margin-bottom: 60px;
+}
+
+.services .service h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.services .service p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  padding: 20px 0;
+  color: #fff;
+}
+
+footer p {
+  font
+
+
+  /* Portfolio Styles */
+.portfolio {
+  background-color: #f7f7f7;
+  padding: 80px 0;
+}
+
+.portfolio .project {
+  margin-bottom: 60px;
+}
+
+.portfolio .project img {
+  width: 100%;
+  height: auto;
+}
+
+.portfolio .project h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.portfolio .project p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.portfolio .project .btn {
+  display: inline-block;
+  background-color: #c2185b;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.portfolio .project .btn:hover {
+  background-color: #fff;
+  color: #c2185b;
+}
+
+/* Contact Styles */
+.contact {
+  background-color: #fff;
+  padding: 80px 0;
+}
+
+.contact form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact form label {
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.contact form input,
+.contact form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.contact form textarea {
+  resize: vertical;
+}
+
+.contact form button[type='submit'] {
+  display: block;
+  background-color: #c2185b;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.contact form button[type='submit']:hover {
+  background-color: #fff;
+  color: #c2185b;
+}
