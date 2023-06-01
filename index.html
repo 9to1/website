@@ -57,11 +57,127 @@
                   <p>&copy; 2023 9to1. All rights reserved.</p>
                   <ul>
                     <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="preference.html">Manage Cookie Preferences</a></li>
                   </ul>
                 </div>
               </footer>
               <script src="script.js"></script>
-</body>
+</body> 
+            
+</html>
 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cookie Popup Example</title>
+  <style>
+    .cookie-popup {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #f0f0f0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .cookie-popup button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .error-message {
+      color: red;
+      font-weight: bold;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="cookie-popup">
+    <p>This website uses cookies to ensure you get the best experience on our website. Read our Privacy Policy for More Informations.</p>
+    <button onclick="acceptCookies()">Accept</button>
+    <button onclick="rejectCookies()">Reject</button>
+    <button onclick="managePreferences()">Manage Preferences</button>
+    <p class="error-message" style="display: none;">This website requires the acceptance of cookies to function properly.</p>
+  </div>
+
+  <script>
+    function setCookie(name, value, days) {
+      var expires = "";
+      if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ')
+          c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0)
+          return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    }
+
+    function acceptCookies() {
+      setCookie("cookies_accepted", "true", 365);
+      hidePopup();
+    }
+
+    function rejectCookies() {
+      setCookie("cookies_accepted", "false", 365);
+      showError();
+    }
+
+    function hidePopup() {
+      var cookiePopup = document.querySelector('.cookie-popup');
+      cookiePopup.style.display = 'none';
+    }
+
+    function showPopup() {
+      var cookiePopup = document.querySelector('.cookie-popup');
+      cookiePopup.style.display = 'block';
+    }
+
+    function showError() {
+      var errorMessage = document.querySelector('.error-message');
+      errorMessage.style.display = 'block';
+    }
+
+    function managePreferences() {
+      window.location.href = "preference.html"; // Redirect to preference management page
+    }
+
+    function checkCookie() {
+      var cookiesAccepted = getCookie("cookies_accepted");
+
+      if (cookiesAccepted === "true") {
+        hidePopup();
+      } else if (cookiesAccepted === "false") {
+        showPopup();
+        showError();
+      } else {
+        showPopup();
+      }
+    }
+
+    window.onload = checkCookie;
+  </script>
+</body>
 </html>
